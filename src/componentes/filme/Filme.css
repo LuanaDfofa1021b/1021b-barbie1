@@ -1,0 +1,12 @@
+.filme_content{
+    width: 300px;
+    padding: 50px;
+
+}
+.filme_content>img{
+    width: 100%;
+    
+}
+.sinopse{
+    text-align: justify;
+}
