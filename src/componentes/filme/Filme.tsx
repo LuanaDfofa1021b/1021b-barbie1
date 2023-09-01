@@ -12,6 +12,7 @@ export default function Filme(props:FilmeProps){
             <img src={props.imagem} alt=""/>
             <div className="texto_foto">
                 <h1>Barbie</h1>
+                <div className="texto_foto"></div>
                 <h1>Transformes</h1>
                 <p className="sinopse">
                     {props.sinopse}
