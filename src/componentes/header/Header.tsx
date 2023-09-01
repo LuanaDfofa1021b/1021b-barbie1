@@ -1,10 +1,9 @@
 import './Header.css'
+import Logo from '../../assets/pngfind.com-barbie-logo-png-667657.png'
 function Header(){
     return(
         <header>
-            <div>
-                logo
-            </div>
+           <img src={Logo} alt="" />
             <nav>
                 <ul>
                     <li>

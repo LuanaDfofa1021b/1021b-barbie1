@@ -1,9 +1,15 @@
 header{
-    background-color: pink;
+    background-color: #ED419A;
     display: flex;
     justify-content: space-between;
     padding: 20px 10vw;
     align-items: center;
+    padding: 50px;
+}
+.logo1{
+    background: url("../../assets/pngfind.com-barbie-logo-png-667657.png");
+    width: 250px;
+    height: auto;
 }
 
 header nav ul li a{
@@ -16,4 +22,8 @@ header nav ul{
     display: flex;
     list-style: none;
     gap: 15px;
+}
+header nav ul :hover{
+    cursor:pointer;
+    color:black
 }
