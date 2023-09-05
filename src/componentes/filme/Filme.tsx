@@ -9,13 +9,13 @@ type FilmeProps={
 export default function Filme(props:FilmeProps){
     return(
         <div className="filme_content">
+            <div className="foto_filme">
             <img src={props.imagem} alt=""/>
+            </div>
             <div className="texto_foto">
                 <h1>{props.titulo}</h1>
                 <div className="texto_foto"></div>
                     {props.sinopse}
-
-
             </div>
         </div>
     )
