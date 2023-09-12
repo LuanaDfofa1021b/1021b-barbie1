@@ -17,7 +17,7 @@ export default function Main(){
              titulo:"Barbie" ,
              sinopse:"A jovem Barbie (Margot Robbie) vive no mundo perfeito das bonecas, chamado Barbielândia, onde todo dia é incrível. No entanto, quando ela entra em uma crise existencial, acaba sendo exilada devido às suas imperfeições.",
              imagem:"/barbie.png"       
-        }
+        },
         {
             id:2
             titulo:"Barbie Butterfly e a Princesa Fairy" ,

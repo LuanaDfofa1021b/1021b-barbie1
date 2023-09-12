@@ -1,175 +1,180 @@
-// const collection = 'NEW_COLLECTION_NAME';
+use("patissier");
+db.createCollection("cake");
 
-//CREATE DATABASE TEST
-//USE TEST
-//use("test");
-//Apagando a collection antes de inserir novos dados.
-//db.cardapio.drop();
-
-//Código para criar uma nova collection
-//db.createCollection("cardapio");
-
-//Código para inserir vários dados em uma collection criada anteriormente
-//db.cardapio.insertMany([
-   // {nome:"Macarrão",preco:29.99,ingredientes:"Macarrão"},
-    //{nome:"Strogonoff",preco:59.99,ingredientes:"Carne Wagyu e Arroz"},
-   // {nome:"Pirão",preco:50,ingredientes:"Farinha, Frango Caipira, Arroz"},
-    //{nome:"Rozcowvo",preco:29.99,ingredientes:"Ovo, Arroz, Feijão"},
-    //{nome:"Prato do Dia",preco:10.99,ingredientes:"Arroz, Feijão e Bife"}
-//])
-
-//SELECT * FROM test.cardapio;
-
-//No mongo para selecionar vamos usar o comando find
-
-//devolve todos os dados da collection
-//db.cardapio.find();
-
-//Filtrando pelo nome
-//SELECT * FROM cardapio where nome="Macarrão"; 
-//db.cardapio.find({nome:"Macarrão"});
-
-//Para selecionar as colunas usamos a projeção
-//SELECT nome, preco FROM cardapio where nome="Macarrão"; 
-//db.cardapio.find({nome:"Macarrão"},{nome:true,preco:true});
-
-//FIND ({QUERY},{PROJEÇÃO})
-
-
-use("teretreino");
-db.dropDatabase();
-db.createCollection("treino");
-
-db.treino.insertOne({
-    nome:"Peito e Biceps",
-    dia_semana:"Segunda",
-    aparelhos:[{
-        nome: "Supino",
-        serie:4,
-        repeticoes:15
+use("patissier");
+db.cake.insertOne({
+    _id:ObjectId("111111111111"),
+    nome:"Bolo de chocolate",
+    preco: 60,
+    ingredientes:[{
+        nome: "ovo",
+        quantidade: "3"
     },
     {
-        nome: "Rosca martelo",
-        serie:4,
-        repeticoes:15
+        nome: "trigo",
+        quantidade: "3 xicaras"
     },
 
     {
-        nome: "Voador",
-        serie:4,
-        repeticoes:15
+        nome: "leite",
+        quantidade: "1 litro"
     },
     {
-        nome: "Rosca Scott",
-        serie:4,
-        repeticoes:15
-    }
-]
-}
-)
-
-db.treino.insertOne({
-    nome:"Costas e Triceps",
-    dia_semana:"quarta",
-    aparelhos:[{
-        nome: "Triceps Polia",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Triceps Corda",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Pull Down",
-        serie:4,
-        repeticoes:15
-    },
-
-    {
-        nome: "Remada Curvada",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Puxada Alta",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Remada Baixa",
-        serie:4,
-        repeticoes:15
-    }
-]
-}
-)
-db.treino.insertOne({
-    nome:"Inferiores",
-    dia_semana:"terca e quinta",
-    aparelhos:[{
-        nome: "Leg Press",
-        serie:4,
-        repeticoes:12
-    },
-    {
-        nome: "Agachamento",
-        serie:4,
-        repeticoes:12
-    },
-    {
-        nome: "Levantamento Terra",
-        serie:4,
-        repeticoes:12
-    },
-
-    {
-        nome: "Panturrilha",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Cadeira Extensora",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Cadeira Abdutora",
-        serie:4,
-        repeticoes:15
-    },
-    {
-        nome: "Cadeira Adutora",
-        serie:4,
-        repeticoes:15
-    }
-]
-}
-)
-use("teretreino");
-db.treino.find({_id:ObjectId("64f74d30278461db90dc34c2")}) 
-
-use("teretreino");
-db.treino.updateOne({_id: ObjectId("64f74d30278461db90dc34c2")}, 
-    {                         
-        $set:{
-            diaSemana:"Sexta",
-            nome:"Peito e Biceps A"
+        nome: "chocolate",
+        quantidade: "2 xicaras"
         
-        }
-    }
-)
-use("teretreino");
-db.treino.updateOne({_id:ObjectId("64f74d30278461db90dc34c2"), "aparelhos.nome":"Rosca Scott"}, 
-    {                         
-        $set:{
-            "aparelhos.$.serie": 5,
-            "aparelhos.$.repeticoes": 12
+    },
+    {
+        nome: "fermento",
+        quantidade: "1 colher de sopa"
         
-        }
     }
+]
+}
 )
+use("patissier");
+db.cake.insertOne({
+    _id:ObjectId("222222222222"),
+    nome:"Bolo de 4 leite",
+    preco: 90,
+    ingredientes:[{
+        nome: "trigo",
+        quantidade: "3 xicaras" 
+    },
+    {
+        nome: "ovo",
+        quantidade: "3 ovos"
+    },
+    {
+        nome: "leite",
+        quantidade: "3 xicaras"
+    },
+
+    {
+        nome: "baunilha",
+        quantidade: "3 gotas"
+    },
+    {
+        nome: "leite ninho",
+        quantidade: "2 xicaras"
+    },
+    {
+        nome: "fermento",
+        quantidade: "1 colher de sopa"
+    }
+]
+}
+)
+use("patissier");
+db.cake.insertOne({
+    _id:ObjectId("333333333333"),
+    nome:"Bolo de cenoura",
+    preco: 35,
+    ingredientes:[{
+        nome: "trigo",
+        quantidade: "3 xicaras"
+    },
+    {
+        nome: "leite",
+        quantidade: "3 xicaras"
+    },
+    {
+        nome: "cenoura",
+        quantidade: "3 cenouras inteiras"
+    },
+
+    {
+        nome: "acucar",
+        quantidade: "3 xicaras"
+    },
+    {
+        nome: "ovo",
+        quantidade: "3 ovos"
+    },
+    {
+        nome: "oleo",
+        quantidade: "1 xicara"
+    }
+    
+]
+}
+)
+use("patissier");
+db.cake.insertOne({
+    _id:ObjectId("444444444444"),
+    nome:"Bolo de fuba",
+    preco: 35,
+    ingredientes:[{
+        nome: "trigo",
+        quantidade: "3 xicaras"
+    },
+    {
+        nome: "leite",
+        quantidade: "3 xicaras"
+    },
+    {
+        nome: "fuba",
+        quantidade: "1kg"
+    },
+
+    {
+        nome: "acucar",
+        quantidade: "3 xicaras"
+    },
+    {
+        nome: "ovo",
+        quantidade: "3 ovos"
+    },
+    {
+        nome: "oleo",
+        quantidade: "1 xicara"
+    }
+    
+]
+}
+)
+//3-  Excluir o document cake com _id:1
+use("patissier");
+db.cake.deleteOne({ _id: ObjectId("111111111111") });
+
+//4- Listar o nome e preço de todos os bolo
+use("patissier");
+db.cake.find({}, { nome: 1, preco: 1, _id: 0 });
+
+// 5-Listar o nome eo preço de todos os bolos com o preço menor ou igual a 70
+use("patissier");
+db.cake.find({ preco: { $lte: 70 } }, { nome: 1, preco: 1, _id: 0 });
+
+//6- Criar uma consulta que mude(tem que usar o uptade) o nome, peso e acrescente 1 ingrediente no bolo de _id:2 
+use("patissier");
+db.cake.updateOne(
+  { _id: ObjectId("222222222222") },
+  {
+    $set: {
+      nome: "bolo de cereija",
+      preco: 90,
+    },
+    $push: {
+      ingredientes: {
+        nome: "cereija",
+        quantidade: "1 caixa",
+      },
+    },
+  }
+)
+
+//7-  Criar um update que modifique 1 ingrediente de um bolo para ovos e quantidade 3
+use("patissier");
+db.cake.updateOne(
+  { _id: ObjectId("111111111111"), "ingredientes.nome": "ovo" },
+  {
+    $set: {
+      "ingredientes.$.quantidade": "6",
+    },
+  }
+);
+
+
 
 
 
