@@ -1,11 +1,35 @@
+import {useState} from "react"
 import Filme from "../filme/Filme";
 import './Main.css'
-
+type FilmesType = {
+    id: number,
+    titulo:string,
+    sinopse:string,
+    imagem:string
+}
 export default function Main(){
-    let texto = "Luana"
-    function mudaTexto(){
-        console.log("lu")
-        texto = "Delevatti"
+    //Hook
+    const [texto,setTexto] = useState("Luana")
+
+    const filmes:FilmesType[] = [
+        {
+            id:1
+             titulo:"Barbie" ,
+             sinopse:"A jovem Barbie (Margot Robbie) vive no mundo perfeito das bonecas, chamado Barbielândia, onde todo dia é incrível. No entanto, quando ela entra em uma crise existencial, acaba sendo exilada devido às suas imperfeições.",
+             imagem:"/barbie.png"       
+        }
+        {
+            id:2
+            titulo:"Barbie Butterfly e a Princesa Fairy" ,
+            sinopse:" Butterfly se torna a embaixadora real de Flutterfield e é enviada para estabelecer a paz entre sua terra encantada e seus rivais. Apesar de não causar uma boa impressão no rei, ela faz amizade com a tímida filha do monarca, a princesa Catania.",
+            imagem:"/barbiebutterfly.jpg"
+        }
+    ]
+
+    //A FUNÇÃO RECEBE UM ATRIBUTO CHAMADO DE "EVENT"
+    function mudaTexto(e:React.ChangeEvent<HTMLInputElement>){
+        console.log(e.target.value)
+        setTexto (e.target.value)
     }
     return(
         <>
