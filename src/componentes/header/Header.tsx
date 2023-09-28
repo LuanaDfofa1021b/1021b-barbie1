@@ -1,23 +1,28 @@
 import './Header.css'
+import { Link } from 'react-router-dom'
 import Logo from '../../assets/pngfind.com-barbie-logo-png-667657.png'
 function Header(){
     return(
         
         <header>
-           <img src={Logo} alt="" />
+           <Link to='/'><img src={Logo} alt="" /></Link>
             <nav>
                 <ul>
                     <li>
-                        <a href="#">Página inicial</a>
+                        <Link to="/">Pagina Inical</Link>
                     </li>
                     <li>
-                        <a href="#">Sobre</a>
+                        <Link to="/sobre">Sobre</Link>
+                       
+
                     </li>
                     <li>
-                        <a href="#">Notícias</a>
+                        <Link to="/noticias">Notícias</Link>
+                        
                     </li>
                     <li>
-                        <a href="#">Contato</a>
+                    <Link to="/contatos">Contatos</Link>
+                    
                     </li>
                 </ul>
             </nav>
