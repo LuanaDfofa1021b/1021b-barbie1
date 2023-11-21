@@ -2,6 +2,7 @@ import { useState } from "react";
 import Filme from "../filme/Filme";
 import "./Main.css";
 
+
 type FilmesType = {
   id: number;
   titulo: string;
@@ -88,24 +89,28 @@ export default function Main() {
     setTexto(e.target.value);
   }
 
-  return (
+  return(
     <>
-      <div className="pesquisa">
-        <p>Buscar Filme</p>
-        <input className="barrapesquisa" type="text" onChange={mudaTexto} />
-        <div>
-          <p className="texto_digitado">pesquisa: {texto}</p>
+        <div className="pesquisa">
+            
+            <p>Buscar Filme</p>
+            <input className='barrapesquisa' type="text" onChange={mudaTexto} />
+            <div>
+                <p className='texto_digitado'>pesquisa: {texto}</p>
+            </div>
         </div>
-      </div>
-
-      <main className="content-main">
-      {filmes.filter((filme)=>filme.titulo.toLocaleLowerCase().includes(texto)).map((filme: FilmesType)=><Filme key={filme.id} titulo= {filme.titulo} sinopse= {filme.sinopse} imagem={filme.imagem}
-        />
-
-      )}
-
-    
-      </main>
+        <main className="content-main">
+            {filmes
+            .filter((filme)=>filme.titulo.toLowerCase().includes(texto.toLowerCase()))
+            .map((filme:FilmesType)=>
+                <Filme key={filme.id} 
+                       titulo={filme.titulo} 
+                       sinopse={filme.sinopse} 
+                       imagem={filme.imagem}
+                />
+                )
+            }
+        </main>
     </>
-  )
+)
 }

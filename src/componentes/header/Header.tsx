@@ -21,7 +21,7 @@ function Header(){
                         
                     </li>
                     <li>
-                    <Link to="/contatos">Contatos</Link>
+                    <Link to="/contato">Contatos</Link>
                     
                     </li>
                 </ul>
